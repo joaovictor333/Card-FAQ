@@ -21,51 +21,55 @@
   --Light-grayish-blue: hsl(0, 0%, 100%);
 }
 body {
-  background: linear-gradient(100deg, var(--Soft-violet), var(--Soft-blue));
+  background: linear-gradient(270deg, var(--Soft-violet), var(--Soft-blue));
 
   font-family: "Kumbh Sans", sans-serif;
 }
 
 .container {
   background-color: var(--Light-grayish-blue);
-
   display: flex;
-  padding: 30px;
-  width: 100%;
-  max-width: 920px;
+  width: 980px;
   height: 520px;
-
-  margin: auto;
-  margin-top: 40px;
+  margin: 0 auto;
+  margin-top: 4em;
   border-radius: 20px;
   -webkit-box-shadow: 0 5rem 5rem -10px rgba(0, 0, 0, 0.25);
   box-shadow: 0 5rem 5rem -10px rgba(0, 0, 0, 0.25);
 }
-.img-illustration-woman {
-  position: absolute;
-  left: 11rem;
-}
+.img-illustration-woman,
 .box {
   position: absolute;
-  left: 11vw;
+  float: left;
 }
 
 .container__content {
-  font-size: 14.4px;
+  margin-top: 2em;
+
+  font-size: 12.99px;
+  width: 350px;
 }
 .container__content h1 {
-  margin-bottom: 10px;
+  margin-bottom: 0.933em;
+
+  color: var(--Very-dark-desaturated-blue);
 }
 
 .content__details {
-  height: 65px;
+  height: 70px;
+  padding-bottom: 4rem;
+
   color: var(--Dark-grayish-blue);
 }
 .content__details__summary {
   color: var(--Very-dark-desaturated-blue);
-  border-bottom: 1px solid;
+  border-bottom: 1px solid hsl(240, 6%, 50%);
   cursor: pointer;
 
+  padding-bottom: 0.6em;
+
+  margin-bottom: 0.7em;
+  margin-top: 0.9em;
   width: 380px;
   outline: none;
   list-style: none;
@@ -73,9 +77,9 @@ body {
 
 .content__details__summary::after {
   content: url(../images/icon-arrow-down.svg);
-  position: absolute;
-  right: 19.8vw;
-  transition: 0.7s all;
+
+  float: right;
+  transition: 0.5s all;
 }
 
 .content__details[open] .content__details__summary {
@@ -98,6 +102,7 @@ body {
 .footer {
   text-align: center;
   margin-top: 20px;
+  height: 70px;
   color: var(--Very-dark-desaturated-blue);
 }
 .footer a {
@@ -129,11 +134,14 @@ Responsividade baseado no que eu sei rsrsrs
 @media screen and (max-width: 767px) {
   body {
     box-sizing: border-box;
+    
   }
   .container {
-    width: 329px;
-    height: 596px;
+    width: 340px;
+    height: 600px;
     margin-top: 20%;
+    align-items: center;
+    justify-content: center;
   }
   .img-illustration-woman,
   .box,
@@ -141,25 +149,36 @@ Responsividade baseado no que eu sei rsrsrs
     display: none;
   }
   .content__details {
-    height: 1em;
-    margin-bottom: 50px;
+    height: 7.05em;
   }
   .content__details,
   .content__details__summary {
-    width: 253px;
-
+    width: 263px;
+    margin: auto;
     font-size: 12.5px;
   }
   .mobile {
     content: url(../images/illustration-woman-online-mobile.svg);
-    width: 250px;
-    position: absolute;
     top: 0;
+    width: 200px;
+    position: absolute;
   }
   .container__content {
     margin-top: 100px;
   }
   h1 {
     text-align: center;
+  }
+  .mobile {
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translatey(-10px);
+    }
+    50% {
+      transform: translatey(5px);
+    }
   }
 }
